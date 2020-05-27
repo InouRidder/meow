@@ -16,7 +16,11 @@ class Cat extends Base
         return $this->belongsTo('App\Cat', 'cat_id');
     }
 
-    public function kittensOlderThan(integer $age ) : Array {
-        return $this->where('age', '>', $age);
+    public function kittensOlderThan(int $age ) {
+        return $this->kittens->where('age', '>', $age);
+    }
+
+    static function foundAfter(DateTime $date) {
+
     }
 }

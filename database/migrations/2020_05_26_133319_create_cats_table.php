@@ -23,7 +23,8 @@ class CreateCatsTable extends Migration
             $table->foreignId('cat_id')
                   ->nullable()
                   ->references('id')
-                  ->on('cats');
+                  ->on('cats')
+                  ->onDelete('set null');
             $table->timestamps();
         });
     }
